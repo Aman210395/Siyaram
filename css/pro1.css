@@ -1,0 +1,22 @@
+body{
+    background-image: url("bg2.jpg");
+    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100%; */
+}
+.box1{
+    background-image: url("2.jpg");
+    /* background-size: 100% 100%; */
+    background-repeat: no-repeat;
+
+    background-color: #000;
+    height: 200px;
+    width: 200px;
+}
+.box2{
+    height: 200px;
+    width: 200px;
+    background-color: #036985;
+}
+.box2:hover{
+    background-color: red;
+}
