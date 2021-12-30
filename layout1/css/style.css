@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    /* background-color: #53A5E9; */
+}
+.header{
+    height: 70px;
+    width: 100%;
+    background-color: #051E32;
+    border-bottom: 5px solid #fff;
+}
+.content{
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    
+    /* background-color: red; */
+}
+.footer{
+    width: 100%;
+    background-color: #051E32;
+    height: 250px;
+    border-top: 5px solid #fff;
+}
+.wrapper{
+    width: 1110px;
+    margin: 0 auto;
+}
+.logo{
+    height: 70px;
+    width: 300px;
+    /* background-color: red; */
+    float: left;
+}
+.menu{
+    float: left;
+    height: 70px;
+    width: 810px;
+    /* background-color: yellow; */
+}
+.logo h2{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+.logo p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+}
+.menu ul li{
+    list-style: none;
+    float: right;
+}
+.menu ul li a{
+    color: #fff;
+    display: inline-block;
+    /* background-color: red; */
+    margin: 22px 10px 10px 10px;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px 8px 0 0;
+}
+.menu ul li a:hover{
+    background-color: #fff;
+    color: #051E32;
+}
+.active{
+    background-color: #fff;
+    color: #051E32 !important;
+}
+.slider{
+    width: 100%;
+    background-color: red;
+    height: 300px;
+    background-image: url("../images/slider2.jpg");
+    background-size: 100% 100%;
+}
+.left-content{
+    height: 300px;
+    width: 230px;
+    /* background-color: red; */
+    float: left;
+    margin: 10px;
+    border: 1px solid #051E32;
+    border-radius: 8px 8px 0 0 ;
+}
+.right-content{
+    margin: 10px;
+    float: left;
+    height: 580px;
+    width: 840px;
+    /* background-color: blue; */
+}
+.left-content h4{
+    margin: 0 0 2px 0;
+    padding: 0;
+    text-align: center;
+    background-color: #051E32;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+.left-content ul{
+    margin: 0;
+    padding: 0;
+}
+.left-content ul li{
+    list-style: none;
+}
+.left-content ul li a{
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    color: #051E32;
+}
+.left-content ul li a:hover{
+    background-color: #051E32;
+    color: #fff;
+}
