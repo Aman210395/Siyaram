@@ -1,0 +1,16 @@
+.bg-orange{
+    background-color: #EE4817;
+}
+.top-bar ul li a{
+    color: #fff !important;
+}
+.bg-black{
+    background-color: #000;
+}
+.navbar .nav .nav-item .nav-link{
+    color: #fff !important;
+}
+
+.navbar .nav .nav-item .nav-link:hover{
+    background-color: #EE4817;
+}
