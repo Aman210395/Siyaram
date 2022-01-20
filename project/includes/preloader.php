@@ -25,9 +25,7 @@
 </head>
 
 <body>
-<div id="preloder">
-        <div class="loader"></div>
-    </div>
+
 
    
     <div class="offcanvas-menu-overlay"></div>
