@@ -1,6 +1,7 @@
 <?php
 // print_r($_POST);
-$con = mysqli_connect("localhost", "root", "", "tss5");
+
+include("config/db.php");
 
 
 $a = $_POST['fullname'];

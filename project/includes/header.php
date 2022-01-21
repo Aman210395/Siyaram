@@ -1,3 +1,8 @@
+<?php
+
+$que = "SELECT * FROM category";
+$result = mysqli_query($con, $que);
+?>
 <header class="header">
         <div class="header__top">
             <div class="container">
@@ -38,14 +43,17 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="index.php">Home Page</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            
+                            <li><a href="#">Category</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <?php
+                                        while($data=mysqli_fetch_assoc($result))
+                                        {
+                                            echo "<li><a href='#'>".$data['name']."</a></li>";
+                                        }
+                                    ?>
+                                    <!-- <li><a href="./about.html">About Us</a></li> -->
+                                    
                                 </ul>
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
