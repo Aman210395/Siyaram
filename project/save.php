@@ -1,6 +1,7 @@
 <?php
 // print_r($_POST);
 
+
 include("config/db.php");
 
 
@@ -14,6 +15,7 @@ $h = $_POST['city'];
 $i = $_POST['add'];
 
 $que="INSERT INTO user (fullname, email, password, address, city, gender, contact) VALUES ('$a', '$b', '$c', '$i', '$h', '$g', '$f')";
+// die;
 
 mysqli_query($con, $que);
 header("location:login.php");

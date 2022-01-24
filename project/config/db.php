@@ -5,4 +5,6 @@ $password = "";
 $dbname = "tss5";
 
 $con = mysqli_connect($hostname, $username, $password, $dbname);
+
+session_start();
 ?>
