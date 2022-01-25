@@ -15,8 +15,27 @@ $result = mysqli_query($con, $que);
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="signup.php">Signup</a>
-                                <a href="login.php">Login</a>
+                                <?php
+                                if(isset($_SESSION['is_user_logged_in']))
+                                { ?>
+
+                                    <a href="logout.php">Logout</a>
+
+
+                                <?php 
+                                }
+                                else
+                                { ?>
+
+                                        <a href="signup.php">Signup</a>
+                                        <a href="login.php">Login</a>
+
+
+                                <?php 
+                                }
+                                ?>
+                                
+                               
                                 
                             </div>
                             <div class="header__top__hover">

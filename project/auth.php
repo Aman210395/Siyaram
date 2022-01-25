@@ -17,7 +17,22 @@ $result=mysqli_query($con, $que);
 
 if(mysqli_num_rows($result)==1)
 {
-    echo "yes";
+    $data = mysqli_fetch_assoc($result);
+    // print_r($data);
+    // echo $data['password'];
+    if($data['password']==sha1($p))
+    {
+        $_SESSION['id']=$data['id'];
+        $_SESSION['name']=$data['fullname'];
+        $_SESSION['is_user_logged_in']=true;
+
+        header("location:profile.php");
+    }
+    else{
+        $_SESSION['msg'] = "This Password is Incorrect !";
+    // echo $msg;
+        header("location:login.php");
+    }
 }
 else{
     
@@ -28,3 +43,5 @@ else{
 
 
 ?>
+
+<!-- 427083374036 -->
