@@ -23,8 +23,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
         <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Add</a>
-            <a href="#" class="dropdown-item">View</a>
+            <a href="add_product.php" class="dropdown-item">Add</a>
+            <a href="view_product.php" class="dropdown-item">View</a>
         </div>
       </li>
       <li class="nav-item">
@@ -32,6 +32,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Oroders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
       </li>
     </ul>
   </div>
