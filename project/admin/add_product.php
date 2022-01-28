@@ -15,7 +15,7 @@ $result = mysqli_query($con, $que);
 <div class="container mt-4" style="min-height: 600px;">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form action="save_product.php" method="post">
+            <form action="save_product.php" method="post" enctype="multipart/form-data">
             <div class="card">
                 <div class="card-header">
                     <h4>Add New Product</h4>
@@ -24,6 +24,19 @@ $result = mysqli_query($con, $que);
                     <div class="form-group">
                         <label>Product Name</label>
                         <input type="text" name="product_name" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Image</label>
+                        <input type="file" name="image" class="form-control"/>
+                        <p class="text-danger">
+                            <?php
+                                if(isset($_SESSION['msg']))
+                                {
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                }
+                            ?>
+                        </p>
                     </div>
                     <div class="form-group">
                         <label>Product Price</label>
