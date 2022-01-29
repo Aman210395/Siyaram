@@ -1,19 +1,4 @@
 <?php
-include("config/db.php");
-// include("includes/header.php");
-$que = "SELECT * FROM category";
-$result = mysqli_query($con, $que);
+// echo time();
+echo rand(1, 100);
 ?>
-
-<h1>Demo Page</h1>
-<Br/>
-<br/>
-<select>
-    <option>Category</option>
-    <?php
-    while($data = mysqli_fetch_assoc($result))
-    {
-        echo "<option>".$data['name']."</option>";
-    }
-    ?>
-</select>
