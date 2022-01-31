@@ -44,12 +44,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div id="slider" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#slider" data-slide-to="1"></li>
+                    <li data-target="#slider" data-slide-to="2"></li>
+                  </ul>
+
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="slider_img/1.jpg" style="height: 400px; width: 100%;"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="slider_img/2.jpg" style="height: 400px; width: 100%;"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="slider_img/3.jpg" style="height: 400px; width: 100%;"/>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev"  href="#slider" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next"  href="#slider" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
                         </div>
                     </div>
                 </div>

@@ -27,6 +27,13 @@
             <a href="view_product.php" class="dropdown-item">View</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Home Slider</a>
+        <div class="dropdown-menu">
+            <a href="add_slider.php" class="dropdown-item">Add</a>
+            <a href="view_slider.php" class="dropdown-item">View</a>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Users</a>
       </li>

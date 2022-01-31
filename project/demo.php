@@ -1,4 +1,1 @@
-<?php
-// echo time();
-echo rand(1, 100);
-?>
+<a href="demo2.php?name=nidhi&age=25">Hello</a>
