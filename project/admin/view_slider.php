@@ -31,13 +31,22 @@ $result = mysqli_query($con, $que);
                 <?php
                 while($data = mysqli_fetch_assoc($result))
                 {
-                    echo "<tr>";
-                    echo "<td>".$data['id']."</td>";
-                    echo "<td>".$data["title"]."</td>";
-                    echo "<td>".$data["text"]."</td>";
-                    echo "<td><img src='../slider_img/".$data['image']."' height='100' width='100' /></td>";
-                    echo "</tr>";
-                }
+                    // echo "<tr>";
+                    // echo "<td>".$data['id']."</td>";
+                    // echo "<td>".$data["title"]."</td>";
+                    // echo "<td>".$data["text"]."</td>";
+                    // echo "<td><img src='../slider_img/".$data['image']."' height='100' width='100' /></td>";
+                    // echo "</tr>";
+
+                    ?>
+                    <tr>
+                        <td><?= $data['id'] ?></td>
+                        <td><?= $data['title'] ?></td>
+                        <td><?= $data['text'] ?></td>
+                        <td><img src="../slider_img/<?= $data['image'] ?>" height="100" width="100"/></td>
+                    </tr>
+
+                <?php }
                 ?>
             </table>
         </div>

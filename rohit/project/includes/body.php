@@ -116,8 +116,9 @@ $result_slider = mysqli_query($con, $que_slider);
                         </div>
                     </div>
 
-                      <?php }
+                      <?php 
                         $n++;
+                      }
                    }
 
                     ?>

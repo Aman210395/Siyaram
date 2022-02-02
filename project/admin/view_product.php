@@ -21,6 +21,7 @@ $result = mysqli_query($con, $que);
                     <th>S.No.</th>
                     <th>Product Name</th>
                     <th>Product Price</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -30,6 +31,7 @@ $result = mysqli_query($con, $que);
                     echo "<td>".$data['id']."</td>";
                     echo "<td>".$data["name"]."</td>";
                     echo "<td>".$data["price"]."</td>";
+                    echo "<td><a href='edit_product.php?id=".$data['id']."' class='btn btn-info btn-sm'>Edit</a></td>";
 
                     echo "<td><a href='delete_product.php?id=".$data['id']."' class='btn btn-danger btn-sm'>Delete</a></td>";
 

@@ -19,6 +19,7 @@ $result = mysqli_query($con, $que);
                                 if(isset($_SESSION['is_user_logged_in']))
                                 { ?>
 
+                                    <a href="profile.php">My Profile</a>
                                     <a href="#"><?= $_SESSION['name'] ?></a>
                                     <a href="logout.php">Logout</a>
 
