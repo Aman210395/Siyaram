@@ -37,7 +37,7 @@ $data_user = mysqli_fetch_assoc($result_user);
                     <div class="form-group">
                         <label for="">Gender</label>
                         <Br />
-                        Male : <input type="radio" <?php if($data_user['gender']=='male') echo "checked"; ?> value="male"  name="gender"/>
+                        Male : <input type="radio" <?php if($data_user['gender']=='male') echo "checked";  ?> value="male"  name="gender"/>
                         Female : <input type="radio" <?php if($data_user['gender']=='female') echo "checked"; ?> value="female"  name="gender"/>
                     </div>
                     <div class="form-group">
