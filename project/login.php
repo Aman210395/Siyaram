@@ -14,6 +14,17 @@ include("includes/header.php");
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h4 class="text-center">User Login</h4>
+            <?php
+            if(isset($_SESSION['buy_msg']))
+            { ?>
+                <div class="alert alert-danger">
+                    <?= $_SESSION['buy_msg'] ?>
+                    <button class="close" data-dismiss="alert">X</button>
+                </div>
+           <?php
+           unset($_SESSION['buy_msg']);
+            }
+            ?>
             <div class="form-group">
                 <label>Username/Email</label>
                 <input type="text" name="email" class="form-control" />

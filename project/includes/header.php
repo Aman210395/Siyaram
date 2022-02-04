@@ -70,7 +70,7 @@ $result = mysqli_query($con, $que);
                                     <?php
                                         while($data=mysqli_fetch_assoc($result))
                                         {
-                                            echo "<li><a href='#'>".$data['name']."</a></li>";
+                                            echo "<li><a href='view_product_by_category.php?category=".$data['name']."'>".$data['name']."</a></li>";
                                         }
                                     ?>
                                     <!-- <li><a href="./about.html">About Us</a></li> -->

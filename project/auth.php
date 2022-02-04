@@ -26,7 +26,14 @@ if(mysqli_num_rows($result)==1)
         $_SESSION['name']=$data['fullname'];
         $_SESSION['is_user_logged_in']=true;
 
-        header("location:profile.php");
+        if(isset($_SESSION['current_url']))
+        {
+            header("location:".$_SESSION['current_url']);
+
+        }else{
+
+            header("location:profile.php");
+        }
     }
     else{
         $_SESSION['msg'] = "This Password is Incorrect !";

@@ -25,6 +25,7 @@ $result = mysqli_query($con, $que);
                 <tr>
                     <th>S.No.</th>
                     <th>Category Name</th>
+                    <th>Delete</th>
                 </tr>
                 <?php
                 while($data = mysqli_fetch_assoc($result))
@@ -32,6 +33,7 @@ $result = mysqli_query($con, $que);
                     echo "<tr>";
                     echo "<td>".$data['id']."</td>";
                     echo "<td>".$data["name"]."</td>";
+                    echo "<td><a href='delete_category.php?id=".$data['id']."' class='btn btn-danger btn-sm'>Delete</a></td>";
                     echo "</tr>";
                 }
                 ?>

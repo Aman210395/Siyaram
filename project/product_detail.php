@@ -31,6 +31,11 @@ $data = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM product WHERE id =$
                     <h6><?= $data['price'];?></h6>
                     <Br />
                     <p><?= $data['detail']; ?></p>
+                    <Br />
+                    <Br />
+                    <Br />
+                    <Br />
+                    <a href="confirm_buy.php?id=<?= $a ?>" class="btn btn-success">Buy</a>
                 </div>
             </div>
             

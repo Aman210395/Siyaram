@@ -25,10 +25,11 @@ $result = mysqli_query($con, $que);
                     <th>Delete</th>
                 </tr>
                 <?php
+                $n=1;
                 while($data = mysqli_fetch_assoc($result))
                 {
                     echo "<tr>";
-                    echo "<td>".$data['id']."</td>";
+                    echo "<td>".$n."</td>";
                     echo "<td>".$data["name"]."</td>";
                     echo "<td>".$data["price"]."</td>";
                     echo "<td><a href='edit_product.php?id=".$data['id']."' class='btn btn-info btn-sm'>Edit</a></td>";
@@ -36,6 +37,7 @@ $result = mysqli_query($con, $que);
                     echo "<td><a href='delete_product.php?id=".$data['id']."' class='btn btn-danger btn-sm'>Delete</a></td>";
 
                     echo "</tr>";
+                    $n++;
                 }
                 ?>
             </table>
