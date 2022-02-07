@@ -2,6 +2,23 @@
 
 $que = "SELECT * FROM category";
 $result = mysqli_query($con, $que);
+
+if(isset($_COOKIE['cart']))
+{
+    $cart_item = $_COOKIE['cart']; 
+    // 9
+    // 9#12#17#5
+    $cart_arr = explode("#", $cart_item);
+    // (9)
+    // (9, 12, 17, 5)
+    $total = count($cart_arr);
+}
+else{
+    $total = 0;
+}
+
+
+
 ?>
 <header class="header">
         <div class="header__top">
@@ -41,12 +58,7 @@ $result = mysqli_query($con, $que);
                                 
                             </div>
                             <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
+                                <a href="my_cart.php">My Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i>(<?= $total ?>)</a>
                             </div>
                         </div>
                     </div>
@@ -85,9 +97,10 @@ $result = mysqli_query($con, $que);
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
+                        <!-- <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a> -->
+                        <!-- <div class="price">$0.00</div> -->
                     </div>
                 </div>
             </div>

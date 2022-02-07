@@ -36,8 +36,9 @@ $result=mysqli_query($con, $que);
                             <span class="label">Discount <?= $data['discount'] ?>%</span>
                             
                         </div>
+                        
+                        <a href="add_to_cart.php?id=<?= $data['id'] ?>">+ Add To Cart</a>
                         <div class="product__item__text">
-                            <a href="#" class="add-cart">+ Add To Cart</a>
                             <h6><?= $data['name'] ?> </h6>
                             
                             <h5 style="margin-top: 20px;">&#8377; <?= $new_price ?>(<del style="font-size: 12px !important;"><?= $data['price'] ?></del>)</h5>
