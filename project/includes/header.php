@@ -1,5 +1,7 @@
 <?php
 
+// print_r($_SERVER);
+$current_url = $_SERVER['PHP_SELF'];
 $que = "SELECT * FROM category";
 $result = mysqli_query($con, $que);
 
@@ -75,9 +77,8 @@ else{
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="index.php">Home Page</a></li>
-                            
-                            <li><a href="#">Category</a>
+                            <li <?php if(strstr($current_url, "index.php")) echo "class='active'"; ?>><a href="index.php">Home Page</a></li>
+                            <li <?php if(strstr($current_url, "view_product_by_category.php")) echo "class='active'"; ?>><a href="#">Category</a>
                                 <ul class="dropdown">
                                     <?php
                                         while($data=mysqli_fetch_assoc($result))
@@ -89,8 +90,8 @@ else{
                                     
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li  <?php if(strstr($current_url, "about.php")) echo "class='active'"; ?>><a href="about.php">About</a></li>
+                            <li  <?php if(strstr($current_url, "contact.php")) echo "class='active'"; ?>><a href="contact.php">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

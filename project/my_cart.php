@@ -13,7 +13,10 @@ include("includes/header.php");
     <div class="row">
         <div class="col-md-10 offset-md-1 p-3" style="border: 1px solid #000;">
             <?php
-            $cart_item = $_COOKIE['cart'];
+
+            if(isset($_COOKIE['cart']))
+            {
+                $cart_item = $_COOKIE['cart'];
             // 5#11#9#7
             $cart_arr = explode("#", $cart_item);
             // array(5, 11, 9, 7)
@@ -30,6 +33,7 @@ include("includes/header.php");
                         <div class="col-md-6">
                             <h4><?= $data['name'] ?></h4>
                             <p><?= $data['category'] ?></p>
+                            <a href="delete_cart_item.php?id=<?= $x ?>" class="btn btn-sm btn-danger">Delete</a>
                         </div>
                         <div class="col-md-2">
                             <h5 class="text-right">
@@ -39,6 +43,9 @@ include("includes/header.php");
                     </div>
                 <?php
             }
+        }else{
+            echo "<h5 class='text-center'>No Item Found in Your Cart</h5>";
+        }
             ?>
         </div>
     </div>
