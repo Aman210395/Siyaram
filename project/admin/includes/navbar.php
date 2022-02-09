@@ -35,10 +35,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Users</a>
+        <a class="nav-link" href="view_user.php">Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Oroders</a>
+        <a class="nav-link" href="logo.php">Logo</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

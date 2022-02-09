@@ -19,6 +19,9 @@ else{
     $total = 0;
 }
 
+$que_logo = "SELECT * FROM logo WHERE status = 1";
+$result_logo = mysqli_query($con, $que_logo);
+
 
 
 ?>
@@ -71,7 +74,20 @@ else{
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <?php
+                        if(mysqli_num_rows($result_logo)==1){
+                            $data_logo = mysqli_fetch_assoc($result_logo);
+                            ?>
+                                    <a href="./index.html"><img src="admin/logos/<?= $data_logo['logo_name'] ?>" style="height:50px" /></a>
+                            <?php
+
+
+                        }else{ ?>
+
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <?php 
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

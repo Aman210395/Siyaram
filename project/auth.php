@@ -19,21 +19,22 @@ if(mysqli_num_rows($result)==1)
 {
     $data = mysqli_fetch_assoc($result);
     // print_r($data);
+    // die;
     // echo $data['password'];
     if($data['password']==sha1($p))
     {
-        $_SESSION['id']=$data['id'];
-        $_SESSION['name']=$data['fullname'];
-        $_SESSION['is_user_logged_in']=true;
-
-        if(isset($_SESSION['current_url']))
-        {
-            header("location:".$_SESSION['current_url']);
-
-        }else{
-
+        if($data['status']==1){
+            //echo "yes";die;
+            $_SESSION['id']=$data['id'];
+            $_SESSION['name']=$data['fullname'];
+            $_SESSION['is_user_logged_in']=true;
             header("location:profile.php");
-        }
+        }else{
+            
+            $_SESSION['msg']="You are disabled now !";
+            header("location:login.php");
+        }    
+       
     }
     else{
         $_SESSION['msg'] = "This Password is Incorrect !";
