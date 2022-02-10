@@ -42,6 +42,20 @@ include("includes/header.php");
                     <td><?= $data_user['email'] ?></td>
                 </tr>
                 <tr>
+                    <td>Profile Pic</td>
+                    <?php
+                            if($_SESSION['profile_pic']=="")
+                            {
+                                $name = "avatar.png";
+                            }
+                            else{
+                                
+                                $name = $_SESSION['profile_pic'];
+                            }
+                    ?>
+                    <td><img src="user_img/<?= $name ?>" height="80" width="80" /></td>
+                </tr>
+                <tr>
                     <td>Contact</td>
                     <td><?= $data_user['contact'] ?></td>
                 </tr>
@@ -61,6 +75,7 @@ include("includes/header.php");
             <br />
             <a class="btn btn-info" href="edit_profile.php">Edit Profile</a>
             <a class="btn btn-info" href="change_password.php">Change Password</a>
+            <a class="btn btn-info" href="profile_pic.php">Profile Picture</a>
         </div>
     </div>
 </form>

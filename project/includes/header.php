@@ -39,10 +39,19 @@ $result_logo = mysqli_query($con, $que_logo);
                             <div class="header__top__links">
                                 <?php
                                 if(isset($_SESSION['is_user_logged_in']))
-                                { ?>
-
+                                { 
+                                    
+                                    if($_SESSION['profile_pic']=="")
+                                    {
+                                        $name = "avatar.png";
+                                    }
+                                    else{
+                                        $name = $_SESSION['profile_pic'];
+                                    }
+                                    ?>
+                                    
+                                    <a href="#"><img src="user_img/<?= $name ?>" style="height: 40px; width:40px" /> <?= $_SESSION['name'] ?></a>
                                     <a href="profile.php">My Profile</a>
-                                    <a href="#"><?= $_SESSION['name'] ?></a>
                                     <a href="logout.php">Logout</a>
 
 

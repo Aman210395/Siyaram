@@ -28,6 +28,7 @@ if(mysqli_num_rows($result)==1)
             $_SESSION['id']=$data['id'];
             $_SESSION['name']=$data['fullname'];
             $_SESSION['is_user_logged_in']=true;
+            $_SESSION['profile_pic'] = $data['profile_pic'];
             header("location:profile.php");
         }else{
             
