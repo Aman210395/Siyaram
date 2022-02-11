@@ -1,0 +1,46 @@
+<html>
+    <Head>
+        <style>
+            div{
+                margin: 0 auto;
+                width: 600px;
+                min-height: 400px;
+                padding: 10px;
+                text-align: center;
+                background-color: #50ACED;
+            }
+            #main-img{
+                border:1px solid #000;
+                padding: 5px;
+                
+            }
+            .mini-img{
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                border: 1px solid #000;
+                padding: 2px;
+            }
+        </style>
+        <script>
+            function demo(a)
+            {
+                // alert(a);
+                document.getElementById("main-img").setAttribute("src", a);
+            }
+        </script>
+    </Head>
+    <body>
+        <div>
+
+            <img src="1.jpg" id="main-img" />
+            <br />
+            <br />
+            <img src="1.jpg" onclick="demo('1.jpg')" class="mini-img" />
+            <img src="2.jpg" onclick="demo('2.jpg')" class="mini-img" />
+            <img src="3.jpg" onclick="demo('3.jpg')" class="mini-img" />
+            <img src="4.jpg" onclick="demo('4.jpg')" class="mini-img" />
+            <img src="5.jpg" onclick="demo('5.jpg')" class="mini-img" />
+        </div>
+    </body>
+</html>

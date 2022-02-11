@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            function demo()
+            {
+                var a = document.getElementById("first_num").value;
+                var b = document.getElementById("second_num").value;
+
+                var x = parseInt(a);
+                var y = parseInt(b);
+
+                var c = x+y;
+                
+                alert(c);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <Br />
+        <Br />
+        First Num : <input type="text" id="first_num"/>
+        <Br />
+        <Br />
+        Second Num : <input type="text" id="second_num"/>
+        <Br />
+        <Br />
+        <button onclick="demo()">+</button>
+        
+        <button onclick="demo()">-</button>
+        <button onclick="demo()">x</button>
+        <button onclick="demo()">/</button>
+    </body>
+</html>

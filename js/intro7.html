@@ -1,0 +1,28 @@
+<html>
+    <Head>
+        <script>
+            var check = true;
+            function change()
+            {
+                if(check==true){
+
+                    document.getElementById("pass").setAttribute("type", "text");
+                    document.getElementById("btn").innerHTML = "Hide";
+                    check = false;
+                }else{
+                    document.getElementById("pass").setAttribute("type", "password");
+                    document.getElementById("btn").innerHTML = "Show";
+                    check = true;
+
+                }
+            }
+        </script>
+    </Head>
+    <body>
+        <br />
+        <Br />
+        <Br />
+        Password : <input type="password" id="pass"/>
+        <button onclick="change()" id="btn">Show</button>
+    </body>
+</html>
