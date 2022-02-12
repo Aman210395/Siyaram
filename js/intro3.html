@@ -1,7 +1,7 @@
 <html>
     <head>
         <script>
-            function demo()
+            function demo(ope)
             {
                 var a = document.getElementById("first_num").value;
                 var b = document.getElementById("second_num").value;
@@ -9,9 +9,22 @@
                 var x = parseInt(a);
                 var y = parseInt(b);
 
-                var c = x+y;
+                var c;
+                switch(ope){
+                    case 1 :  c = x+y;
+                            break;
+                    case 2 :  c = x-y;
+                            break;
+                    case 3 :  c = x*y;
+                            break;
+                    case 4 :  c = x/y;
+                            break;
+                }
                 
-                alert(c);
+                
+                // alert(c);
+                document.getElementById("ans").innerHTML = c;
+
             }
         </script>
     </head>
@@ -25,10 +38,12 @@
         Second Num : <input type="text" id="second_num"/>
         <Br />
         <Br />
-        <button onclick="demo()">+</button>
+        <button onclick="demo(1)">+</button>
         
-        <button onclick="demo()">-</button>
-        <button onclick="demo()">x</button>
-        <button onclick="demo()">/</button>
+        <button onclick="demo(2)">-</button>
+        <button onclick="demo(3)">x</button>
+        <button onclick="demo(4)">/</button>
+
+        <h1 id="ans"></h1>
     </body>
 </html>

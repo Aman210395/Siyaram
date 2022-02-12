@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            #box{
+                height: 200px;
+                width: 200px;
+                background-color: #451266;
+            }
+        </style>
+        <script>
+            var check=true;
+            function demo()
+            {
+                if(check==true)
+                {
+
+                document.getElementById("box").style.backgroundColor = "red";
+                check = false;
+                }
+                else{
+                document.getElementById("box").style.backgroundColor = "#451266";
+                check=true;
+
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button ondblclick="demo()">OK</button>
+        <br />
+        <Br />
+        <div id="box"></div>
+    </body>
+</html>

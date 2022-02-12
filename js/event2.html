@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            #box{
+                height: 100px;
+                width: 100px;
+                background-color: #451266;
+            }
+        </style>
+        <script>
+            var h = 100;
+            var w = 100;
+            function demo1()
+            {
+                document.getElementById("box").style.backgroundColor = "#88ACD1";
+            }
+            function demo2()
+            {
+                document.getElementById("box").style.backgroundColor = "#451266";
+                document.getElementById("box").style.height="100px";
+                document.getElementById("box").style.width="100px";
+                h=100;
+                w=100;
+            }
+            function demo3()
+            {
+                h++;
+                w++;
+                document.getElementById("box").style.height=h+"px";
+                document.getElementById("box").style.width=w+"px";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box" onmousemove="demo3()" onmouseover="demo1()" onmouseout="demo2()"></div>
+    </body>
+</html>

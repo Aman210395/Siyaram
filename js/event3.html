@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            #box{
+                height: 100px;
+                width: 100px;
+                background-color: #451266;
+            }
+        </style>
+        <script>
+            function demo()
+            {
+                var a = Math.random()*500;
+                var b = Math.floor(a);
+                
+                var x = Math.random()*700;
+                var y = Math.floor(x);
+
+                document.getElementById("box").style.marginTop=b+"px";
+                document.getElementById("box").style.marginLeft=y+"px";
+            }
+        </script>
+    </head>
+    <body>
+       <div id="box" onmouseover="demo()"></div>    
+    </body>
+</html>
