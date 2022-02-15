@@ -1,0 +1,39 @@
+<html>
+    <Head>
+        <script>
+           function demo()
+           {
+               alert()
+           }
+           function demo2()
+           {
+            //    alert();
+               return false;
+           }
+
+           function demo3()
+           {
+            //    return false;
+            alert();
+           }
+        </script>
+    </Head>
+    <body>
+        <br />
+        <br />
+        <a href="http://google.com" onclick="demo3()">Google</a>
+        <Br />
+        <Br />
+        <select onchange="demo()">
+            <option>Select</option>
+            <option>Indore</option>
+            <option>Mumbai</option>
+            <option>Pune</option>
+            <option>Bhopal</option>
+        </select>
+
+        <div oncontextmenu="return demo2()" style="height: 400px; width: 400px; background-color: #025410;"></div>
+        <Br />
+        
+    </body>
+</html>
