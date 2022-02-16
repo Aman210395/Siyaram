@@ -1,0 +1,30 @@
+<html>
+    <Head>
+        <script src="jquery.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("div").animate(
+                        {
+                            "height":"300px",
+                            "width" : "300px",
+                            "background-color" : "red",
+                            "border-radius":"500px"
+                        }, 1000
+                    )
+                })
+                   
+            });
+
+        </script>
+    </Head>
+    <body>
+        <Br />
+        <Br />
+        <button>OK</button>
+        <div style="height: 200px; width: 200px; background-color: #457812;"></div>
+
+
+    </body>
+</html>

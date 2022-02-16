@@ -1,0 +1,41 @@
+<html>
+    <Head>
+        <script src="jquery.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    var a = $("p").html();
+                    alert(a);
+                    $("p").html("hello world");
+                })
+
+
+                $("#btn2").click(function(){
+                    var b = $("#msg1").val();
+                    // alert(b);
+                    $("#msg2").val(b);
+                })
+            });
+
+        </script>
+    </Head>
+    <body>
+        <Br />
+        <Br />
+        <button id="btn1">OK</button>
+        <Br />
+        <Br />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa numquam, necessitatibus debitis aliquid alias recusandae repudiandae eveniet dicta ullam placeat hic ipsum voluptatem quo quod? Consequatur veniam error temporibus.</p>
+
+        <Br />
+        <br />
+        <button id="btn2">Hello</button>
+        <Br />
+        <Br />
+        <input type="text" id="msg1"/>
+        <br />
+        <br />
+        <input type="text" id="msg2"/>
+    </body>
+</html>

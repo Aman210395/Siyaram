@@ -1,0 +1,41 @@
+<html>
+    <Head>
+        <script src="jquery.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                $("button").click(function(){
+                    // $("div").hide();
+                    //$("div").slideUp(5000); // 1000 = 1sec
+                    // $("div").fadeOut(3000);
+
+                    // $("div").show();
+                    // $("div").slideDown(3000);
+                    // $("div").fadeIn(3000);
+
+                    // $("div").toggle();
+                });
+
+                $("a").mouseover(function(){
+                    $("div").slideDown(500);
+                })
+                $("a").mouseout(function(){
+                    $("div").slideUp(500);
+                })
+            });
+
+        </script>
+    </Head>
+    <body>
+        <Br />
+        <Br />
+        <!-- <button id="btn1">OK</button> -->
+        <a href="#">Help</a>
+        <br />
+        <Br />
+        <div style="display: none; height: 200px; width: 200px; background-color: #025874;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tempore enim molestias, et, sed aliquam nostrum velit nemo obcaecati eum magni odio facere natus eius ipsam, quos voluptates. Id, temporibus.
+        </div>
+
+    </body>
+</html>
