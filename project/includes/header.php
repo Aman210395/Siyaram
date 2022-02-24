@@ -61,7 +61,7 @@ $result_logo = mysqli_query($con, $que_logo);
                                 { ?>
 
                                         <a href="signup.php">Signup</a>
-                                        <a href="login.php">Login</a>
+                                        <a href="login2.php">Login</a>
 
 
                                 <?php 

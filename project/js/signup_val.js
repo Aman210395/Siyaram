@@ -1,4 +1,37 @@
 $(document).ready(function(){
+    $("[name='email']").blur(function(){
+        var email = $("[name='email']").val();
+        var reg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+        if(email != "" && reg.test(email)==true)
+        {
+            $.ajax({
+                type : "post",
+                url : "check_username.php",
+                data : { e : email },
+                success : function(res){
+                    // alert(res);
+                    // console.log(JSON.parse(res));
+                    res = JSON.parse(res);
+                    // console.log(res);
+                    if(res.success == 'false')
+                    {
+                        // alert();
+                        $("#email_msg").html("This Email id already exists !");
+                        $("[name='email']").addClass("is-invalid");
+                    }else{
+                        
+                        $("#email_msg").html("");
+                        $("[name='email']").removeClass("is-invalid");
+                    }
+                }
+            })
+        }
+
+    })
+
+
+
     $("#signup_submit").click(function(){
         
         var name = $("[name='fullname']").val();

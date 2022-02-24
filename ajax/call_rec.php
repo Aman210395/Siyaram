@@ -4,7 +4,7 @@
         <script>
             $(document).ready(function(){
                 $("button").click(function(){
-                    $.get("call_rec_server.php", function(res){
+                    $.post("call_rec_server.php", function(res){
                         // alert(res);
                         $("table").html(res);
                     })

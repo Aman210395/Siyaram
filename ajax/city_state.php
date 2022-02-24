@@ -48,12 +48,7 @@
         <Br />
         Select State <select id="state">
             <option>Select</option>
-            <?php 
-            while($data=mysqli_fetch_assoc($result))
-            { ?>
-                <option><?= $data['city_state'] ?></option>
-            <?php } ?>
-
+           
         </select>
         <br />
         <Br />
