@@ -16,11 +16,12 @@
 
                 $("#state").change(function(){
                     var a = $(this).val();
+                    $("#city").html("");
                     $.post("city_state_server.php", { state : a }, function(res){
                         
                         var data = JSON.parse(res);
                         console.log(data);
-                        
+                        $("#city").html("<option>Select</option>");
                         data.forEach(function(x){
                             var str = `<option>${x.city_name}</option>`;
                             $("#city").append(str);

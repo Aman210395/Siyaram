@@ -6,8 +6,12 @@
         <script>
             $(document).ready(function(){
                 $("button").click(function(){
+                    $("#loader").show();
+
+
                     $.get("https://fakestoreapi.com/products", function(res){
                         console.log(res);
+                        $("#loader").hide();
                         res.forEach(function(x){
                             // var str = "<tr><td>"+x.title+"</td>";
 
@@ -44,7 +48,7 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary">Get Product</button>
+                    <button class="btn btn-primary">Get Product <span id="loader" style="display: none;" class="spinner-border spinner-border-sm"></span></button>
                     <!-- <table class="table table-dark table-hover table-bordered mt-4">
                         <tr>
                             
