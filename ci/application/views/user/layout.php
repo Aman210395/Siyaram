@@ -45,9 +45,26 @@
                         <li class="nav-item <?php if(strstr($current_url, "about")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('user/about') ?>">About</a>
                         </li>
-                        <li class="nav-item <?php if(strstr($current_url, "signup")) echo "active"; ?>">
+                        <?php
+                        if($this->session->userdata("is_user_logged_in"))
+                        { ?>
+                           <li class="nav-item <?php if(strstr($current_url, "signup")) echo "active"; ?>">
+                           <a class="nav-link" href="<?= site_url('profile') ?>">Profile</a>
+                        </li>
+                        <li class="nav-item <?php if(strstr($current_url, "login")) echo "active"; ?>">
+                           <a class="nav-link" href="<?= site_url('profile/logout') ?>">Logout</a>
+                        </li>
+                        <?php }
+                        else{ ?>
+                           <li class="nav-item <?php if(strstr($current_url, "signup")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('user/signup') ?>">Signup</a>
                         </li>
+                        <li class="nav-item <?php if(strstr($current_url, "login")) echo "active"; ?>">
+                           <a class="nav-link" href="<?= site_url('user/login') ?>">Login</a>
+                        </li>
+                        <?php }
+                        ?>
+                        
                         
                         
                      </ul>
