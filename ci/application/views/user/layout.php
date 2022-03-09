@@ -14,6 +14,7 @@
       <link href="<?= base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet" />
       <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet" />
       <link href="<?= base_url('assets/css/responsive.css') ?>" rel="stylesheet" />
+      <script src="<?= base_url('assets/js/jquery-3.4.1.min.js')?>"></script>
    </head>
    <body>
       <div class="hero_area">
@@ -53,6 +54,9 @@
                         </li>
                         <li class="nav-item <?php if(strstr($current_url, "login")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('profile/logout') ?>">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link btn btn-info" href="#"><?= $this->session->userdata("fullname") ?></a>
                         </li>
                         <?php }
                         else{ ?>
@@ -151,7 +155,7 @@
       <!-- footer end -->
       
       
-      <script src="<?= base_url('assets/js/jquery-3.4.1.min.js')?>"></script>
+      
       
       <script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
       
