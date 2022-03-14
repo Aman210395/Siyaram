@@ -2,7 +2,7 @@
 <div class="container" style="min-height: 600px; margin-top:50px; margin-bottom:50px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form action="<?= site_url('user/save') ?>" method="post">
+            <form action="<?= site_url('user/save') ?>" method="post" enctype="multipart/form-data">
             <div class="card">
                 <div class="card-header">
                     User Signup
@@ -23,6 +23,13 @@
                     <div class="form-group">
                         <label for="">Re-Password</label>
                         <input type="password" name="re_pass" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Select Profile Image</label>
+                        <input type="file" name="userfile" class="form-control" />
+                        <small class="text-danger">
+                            <?= $this->session->flashdata("err") ?>
+                        </small>
                     </div>
                     <div class="form-group">
                         <label for="">Address</label>

@@ -9,7 +9,10 @@ class User extends CI_Controller{
     }
    
     function index(){
-        $pagedata = array("pagename"=>"user/home", "title"=>"Home Page");
+        $this->load->model("blogmod");
+        $result = $this->blogmod->select_all();
+
+        $pagedata = array("pagename"=>"user/home", "title"=>"Home Page", "result"=>$result);
         $this->load->view("user/layout", $pagedata);
     }
     function about(){
@@ -31,12 +34,42 @@ class User extends CI_Controller{
     }
 
     function save(){
-        $arr = $this->input->post();
-        unset($arr['re_pass']);
-        $arr['password']=sha1($arr['password']);
-        $this->load->model("Usermod");
-        $this->Usermod->add($arr);
-        redirect("user");
+
+        $config["upload_path"]="assets/user_images/";
+        $config["allowed_types"] = "jpg|jpeg|png|gif|bmp";
+        $config["max_size"]=2048;
+
+        $config['encrypt_name']=true;
+
+        $this->load->library("upload", $config);
+
+        if($this->upload->do_upload()==true)
+        {
+            // print_r($this->upload->data());
+            // die;
+            $arr = $this->input->post();
+            unset($arr['re_pass']);
+            $arr['password']=sha1($arr['password']);
+            $arr['user_image']=$this->upload->data("file_name");
+
+            $this->load->model("Usermod");
+            $this->Usermod->add($arr);
+            redirect("user");
+        }
+        else{
+           $err = $this->upload->display_errors();
+           $this->session->set_flashdata("err", $err);
+           redirect("user/signup");
+        }
+
+
+
+        /*
+
+
+
+        
+        */
     }
     function auth(){
         $this->benchmark->mark('code_start');

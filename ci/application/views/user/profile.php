@@ -16,6 +16,10 @@
                     <td><?= $data['email'] ?></td>
                 </tr>
                 <tr>
+                    <td>Profile</td>
+                    <td><img src="<?= base_url("assets/user_images/".$data['user_image']); ?>" height="80" width="80" /></td>
+                </tr>
+                <tr>
                     <td>Address</td>
                     <td><?= $data['address'] ?></td>
                 </tr>

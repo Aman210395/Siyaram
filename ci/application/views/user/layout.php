@@ -52,6 +52,9 @@
                            <li class="nav-item <?php if(strstr($current_url, "signup")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('profile') ?>">Profile</a>
                         </li>
+                           <li class="nav-item <?php if(strstr($current_url, "blog")) echo "active"; ?>">
+                           <a class="nav-link" href="<?= site_url('blog') ?>">My Blog</a>
+                        </li>
                         <li class="nav-item <?php if(strstr($current_url, "login")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('profile/logout') ?>">Logout</a>
                         </li>
