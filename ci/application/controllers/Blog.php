@@ -11,7 +11,10 @@ class Blog extends CI_Controller{
         $this->backdoor();
     }
     function index(){
-        $pagedata = array("pagename"=>"user/my_blog", "title"=>"My Blog");
+
+        $result = $this->blogmod->select_by_user_id($this->session->userdata("id"));
+
+        $pagedata = array("pagename"=>"user/my_blog", "title"=>"My Blog", "result"=>$result);
         $this->load->view("user/layout", $pagedata);
     }
 
@@ -39,8 +42,9 @@ class Blog extends CI_Controller{
             redirect("blog");
         }
         else{
-            echo $this->upload->display_errors();
-            die;
+            $msg = $this->upload->display_errors();
+            $this->session->set_flashdata("err", $msg);
+            // die;
             redirect("blog");
         }
         

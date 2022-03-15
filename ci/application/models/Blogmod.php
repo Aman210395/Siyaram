@@ -24,11 +24,24 @@ class Blogmod extends CI_Model{
         return $result;
     }
 
+    function select_by_user_id($id)
+    {
+        $this->db->where("user_id", $id);
+        $result = $this->db->get("blog");
+        // SELECT * FROM user WHERE id ='$id'
+        return $result;
+    }
+
 
     function select_all()
     {
         return $this->db->get("blog");
         
+    }
+
+    function select_all_join_user()
+    {
+        return $this->db->query("SELECT * FROM blog LEFT JOIN user ON blog.user_id = user.id ORDER BY blog.id DESC");
     }
 
 

@@ -26,7 +26,7 @@
                   </div>
                   <div class="col-md-9">
                      <h4><?= $data['title'] ?></h4>
-                     <h6><?= $data['category']?></h6>
+                     <h6><?= $data['category']?> (<?= $data['fullname'] ?>)</h6>
                      <p>
                         <?= $data['detail'] ?>
                      </p>

@@ -10,7 +10,7 @@ class User extends CI_Controller{
    
     function index(){
         $this->load->model("blogmod");
-        $result = $this->blogmod->select_all();
+        $result = $this->blogmod->select_all_join_user();
 
         $pagedata = array("pagename"=>"user/home", "title"=>"Home Page", "result"=>$result);
         $this->load->view("user/layout", $pagedata);
