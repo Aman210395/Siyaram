@@ -5,8 +5,9 @@ if(! isset($_SESSION['is_user_logged_in']))
 {
     header("location:login.php");
 }
+$id = $_SESSION['id'];
 
-$que_user = "SELECT * FROM user WHERE id = ".$_SESSION['id'];
+$que_user = "SELECT * FROM user WHERE id = $id";
 $result_user = mysqli_query($con, $que_user);
 $data_user = mysqli_fetch_assoc($result_user);
 

@@ -1,6 +1,6 @@
 <?php
 
-class Profile extends CI_Controller{
+class Profile extends MY_Controller{
 
     function __construct()
     {
@@ -22,11 +22,7 @@ class Profile extends CI_Controller{
     }
 
 
-    function backdoor(){
-        if(! $this->session->userdata("is_user_logged_in")){
-            redirect("user/login");
-        }
-    }
+    
 
     function logout(){
         $this->session->sess_destroy();
