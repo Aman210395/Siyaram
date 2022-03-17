@@ -55,6 +55,10 @@
                         <label for="">Contact</label>
                         <input type="text" class="form-control" name="contact">
                     </div>
+                    <?php
+                        
+                        echo $cap['image'];
+                    ?>
                 </div>
                 <div class="card-footer">
                     <input type="submit" class="btn btn-primary" value="Signup" />

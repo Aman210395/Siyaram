@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h3 class="text-center">User Profile Page</h3>
+            <h5>Last Login Date and Time : <?= nice_date($data2['create_at'],"d-M-Y h:i") ?></h5>
             
             <table class="table table-bordered">
                 <tr>

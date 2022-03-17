@@ -8,6 +8,8 @@ class Profile extends MY_Controller{
         // $this->load->library("session");
         // $this->load->helper("url");
         $this->load->model("usermod");
+        $this->load->helper("date");
+        $this->load->model("logintrackmod");
         $this->backdoor();
     }
     function index(){
@@ -15,8 +17,10 @@ class Profile extends MY_Controller{
         $result=$this->usermod->select_by_id($this->session->userdata("id"));
         $data = $result->row_array();
 
+        $result2= $this->logintrackmod->last_login($this->session->userdata("id"));
+        $data2 = $result2->row_array();
 
-        $pagedata = array("pagename"=>"user/profile", "title"=>"User Profile Page", "data"=>$data);
+        $pagedata = array("pagename"=>"user/profile", "title"=>"User Profile Page", "data"=>$data, "data2"=>$data2);
         $this->load->view("user/layout", $pagedata);
         $this->benchmark->mark('code_end');
     }

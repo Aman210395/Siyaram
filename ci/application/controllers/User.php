@@ -20,6 +20,7 @@ class User extends CI_Controller{
         $this->load->view("user/layout", $pagedata);
     }
     function contact(){
+        $this->load->helper("date");
         $pagedata = array("pagename"=>"user/contact", "title"=>"Contact Page");
         $this->load->view("user/layout", $pagedata);
     }
@@ -83,6 +84,11 @@ class User extends CI_Controller{
             $data = $result->row_array();
             if($data['password'] == sha1($p))
             {
+                $this->load->model("logintrackmod");
+                $login_arr = array("user_id"=>$data['id']);
+
+                $this->logintrackmod->add($login_arr);
+
                 $this->session->set_userdata("is_user_logged_in", true);
                 $this->session->set_userdata("id", $data['id']);
                 $this->session->set_userdata("fullname", $data['fullname']);

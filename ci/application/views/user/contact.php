@@ -2,6 +2,12 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Contact Page</h3>
+           <?php
+
+            $datestring = '%d-%M-%y';
+            $time = time();
+            echo mdate($datestring, $time);
+            ?>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempore ratione sed fugiat deserunt qui neque perferendis voluptas dolorum exercitationem incidunt perspiciatis nulla magnam temporibus omnis mollitia, sequi quam? Velit!</p>
         </div>
     </div>
