@@ -46,6 +46,9 @@
                         <li class="nav-item <?php if(strstr($current_url, "about")) echo "active"; ?>">
                            <a class="nav-link" href="<?= site_url('user/about') ?>">About</a>
                         </li>
+                        <li class="nav-item <?php if(strstr($current_url, "about")) echo "active"; ?>">
+                           <a class="nav-link" href="<?= site_url('user/new_signup') ?>">New Signup</a>
+                        </li>
                         <?php
                         if($this->session->userdata("is_user_logged_in"))
                         { ?>

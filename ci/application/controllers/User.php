@@ -7,6 +7,9 @@ class User extends CI_Controller{
         // $this->load->helper("url");
         // $this->load->library("session");
     }
+
+
+
    
     function index(){
         $this->load->model("blogmod");
@@ -18,6 +21,26 @@ class User extends CI_Controller{
     function about(){
         $pagedata = array("pagename"=>"user/about", "title"=>"About Page");
         $this->load->view("user/layout", $pagedata);
+    }
+    function new_signup(){
+
+        $this->load->library("form_validation");
+
+        $this->form_validation->set_rules("fullname", "Full Name", "required");
+        $this->form_validation->set_rules("email", "Email", "required|valid_email");
+        $this->form_validation->set_rules("password", "Password", "required");
+        $this->form_validation->set_rules("re_pass", "Re-Password", "required|matches[password]");
+
+        if($this->form_validation->run()==false)
+        {
+            $pagedata = array("pagename"=>"user/new_signup", "title"=>"DEMO");
+            $this->load->view("user/layout", $pagedata);
+        }else{
+            echo "yes";
+        }
+
+
+        
     }
     function contact(){
         $this->load->helper("date");
