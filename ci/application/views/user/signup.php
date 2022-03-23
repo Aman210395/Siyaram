@@ -9,6 +9,11 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
+                        <?= $cap['image'] ?>
+                        <br />
+                        <input type="text" class="form-control" name="cap_fill" />
+                    </div>
+                    <div class="form-group">
                         <label for="">Full Name</label>
                         <input type="text" name="fullname" class="form-control">
                     </div>
@@ -55,10 +60,7 @@
                         <label for="">Contact</label>
                         <input type="text" class="form-control" name="contact">
                     </div>
-                    <?php
-                        
-                        echo $cap['image'];
-                    ?>
+                    
                 </div>
                 <div class="card-footer">
                     <input type="submit" class="btn btn-primary" value="Signup" />

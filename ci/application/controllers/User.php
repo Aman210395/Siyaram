@@ -1,9 +1,11 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller{
 
     function __construct()
     {
         parent :: __construct();
+        $this->load->helper('captcha');
         // $this->load->helper("url");
         // $this->load->library("session");
     }
@@ -47,8 +49,84 @@ class User extends CI_Controller{
         $pagedata = array("pagename"=>"user/contact", "title"=>"Contact Page");
         $this->load->view("user/layout", $pagedata);
     }
+
+
+    function my_captcha(){
+        
+        
+        $vals = array(
+            
+            'img_path'      => './assets/cap_img/',
+            'img_url'       => base_url('assets/cap_img'),
+            
+            'img_width'     => 200,
+            'img_height'    => 100,
+            
+            'word_length'   => 6,
+            
+            'colors'        => array(
+                'background' => array(171, 194, 177),
+                'border' => array(10, 51, 11),
+                'text' => array(0, 0, 0),
+                'grid' => array(216, 201, 201)
+            )
+            );
+    
+        $cap = create_captcha($vals);
+        echo $cap['word'];
+        // echo "****************************";
+        
+
+        //echo $this->session->userdata("mystr");
+        // die;
+        //echo $cap['image'];die;
+      
+        $pagedata = array("pagename"=>"user/my_captcha", "title"=>"Contact Page", "cap"=>$cap);
+        $this->load->view("user/layout", $pagedata);
+    }
+
+    function demo(){
+        print_r($this->session->all_userdata());
+    }
+
+    function my_submit(){
+        
+        
+        $x = $this->input->post("captcha_txt");
+        $y = $this->input->post("captcha_str");
+        if($x == $y){
+            echo "yes";
+        }else{
+            $this->session->set_flashdata("captcha_err", "The CAPTCHA is incorrect");
+            redirect("user/my_captcha");
+        }
+    }
+
+
+
     function signup(){
-        $pagedata = array("pagename"=>"user/signup", "title"=>"Signup Page");
+        $vals = array(
+            
+            'img_path'      => './assets/cap_img/',
+            'img_url'       => base_url('assets/cap_img'),
+            
+            'img_width'     => 200,
+            'img_height'    => 100,
+            
+            'word_length'   => 6,
+            
+            'colors'        => array(
+                'background' => array(171, 194, 177),
+                'border' => array(10, 51, 11),
+                'text' => array(0, 0, 0),
+                'grid' => array(216, 201, 201)
+            )
+            );
+    
+        $cap = create_captcha($vals);
+        $this->session->unset_userdata("abc");
+        $this->session->set_userdata("abc", $cap['word']);
+        $pagedata = array("pagename"=>"user/signup", "title"=>"Signup Page", "cap"=>$cap);
         $this->load->view("user/layout", $pagedata);
     }
     function login(){
@@ -58,6 +136,17 @@ class User extends CI_Controller{
     }
 
     function save(){
+
+        print_r($this->input->post());
+        print_r($this->session->all_userdata());
+        die;
+
+
+
+
+
+
+
 
         $config["upload_path"]="assets/user_images/";
         $config["allowed_types"] = "jpg|jpeg|png|gif|bmp";
