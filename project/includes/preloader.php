@@ -32,8 +32,18 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="#">Sign in</a>
-                <a href="#">FAQs</a>
+            <?php
+                if(isset($_SESSION['is_user_logged_in']))
+                { ?>
+                <a href="profile.php">My Profile</a>
+                    <a href="logout.php">Logout</a>
+                <?php }
+                else{ ?>
+                    <a href="signup.php">Sign in</a>
+                    <a href="login.php">Login</a>
+                <?php }
+                ?>
+                
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
