@@ -6,8 +6,8 @@ class User extends CI_Controller{
     {
         parent :: __construct();
         $this->load->helper('captcha');
-        // $this->load->helper("url");
-        // $this->load->library("session");
+        $this->load->helper("url");
+        $this->load->library("session");
     }
 
 

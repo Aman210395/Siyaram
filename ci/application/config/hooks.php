@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+$hook["pre_controller"]=array("class"=>"Myhooks", "function"=>"hello", "filename"=>"Myhooks.php", "filepath"=>"hooks");
 /*
 | -------------------------------------------------------------------------
 | Hooks
