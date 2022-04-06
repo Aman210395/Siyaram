@@ -12,6 +12,25 @@
 
             <br />
             <Br />
+            <form action="" method="post">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Hobby</label>
+                <Br />
+                Cricket<input type="checkbox" name="hobby[]" value="cricket"/>
+                Music<input type="checkbox"  name="hobby[]" value="music"/>
+                Football<input type="checkbox"  name="hobby[]" value="football"/>
+            </div>
+            <br />
+            <input type="submit" name="submit" value="Add" class="btn btn-block btn-success" />
+            <Br />
+            </form>
+
+
+            <Br />
             <button id="mybtn" class="btn btn-primary">Get Data</button>
 
             <table class="table table-dark"></table>

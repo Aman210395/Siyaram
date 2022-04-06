@@ -46,6 +46,26 @@ class User extends CI_Controller{
     }
     function contact(){
         $this->load->helper("date");
+
+        if($this->input->post("submit"))
+        {
+            // print_r($this->input->post());
+            // die;
+            $data['name']=$this->input->post("name");
+            if($this->input->post("hobby"))
+            {
+                $hobby = implode(",", $this->input->post("hobby"));
+                $data['hobby']=$hobby;
+            }
+            else{
+                $data['hobby']="";
+            }
+            $this->load->model("blogmod");
+            $this->blogmod->insert_demo($data);
+            redirect("/user");
+        }
+
+
         $pagedata = array("pagename"=>"user/contact", "title"=>"Contact Page");
         $this->load->view("user/layout", $pagedata);
     }

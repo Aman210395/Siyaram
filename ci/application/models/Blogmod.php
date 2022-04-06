@@ -8,6 +8,10 @@ class Blogmod extends CI_Model{
         $this->load->database();
     }
 
+    function insert_demo($data){
+        $this->db->insert("demo", $data);
+    }
+
     function add($data)
     {
         // print_r($data);die;
